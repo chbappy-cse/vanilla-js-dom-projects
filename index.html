@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>DOM Manipulation Projects in Vanilla JavaScript | Ch Bappy</title>
+  <meta name="title" content="DOM Manipulation Projects in Vanilla JavaScript | Ch Bappy">
+  <meta name="description"
+    content="Explore a curated collection of DOM Manipulation projects built with Vanilla JavaScript. Improve your JavaScript skills with interactive web applications by Ch Bappy.">
+  <meta name="keywords"
+    content="DOM Manipulation, JavaScript Projects, Vanilla JavaScript, JavaScript Practice, Frontend Projects, Ch Bappy, Interactive Web Apps">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DOM Manipulation Projects in Vanilla JavaScript | Ch Bappy">
+  <meta property="og:description"
+    content="Learn DOM Manipulation through practical Vanilla JavaScript projects by Ch Bappy. Hands-on experience for interactive web development.">
+  <meta property="og:image" content="/img/dom-projects-thumbnail.jpg">
+  <meta property="og:url" content="https://github.com/chbappy-cse/vanilla-js-dom-projects">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="DOM Manipulation Projects in Vanilla JavaScript | Ch Bappy">
+  <meta property="twitter:description"
+    content="Practice DOM Manipulation and build interactive web apps with Vanilla JavaScript. Curated projects by Ch Bappy for learning.">
+  <meta property="twitter:image" content="/img/dom-projects-thumbnail.jpg">
+
+  <link rel="icon" type="image/x-icon" href="/img/chbappy-cse-favicon.png">
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ovo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/tailwind.config.js"></script>
+
+</head>
+
+<body class="overflow-x-hidden font-Poppins leading-8 dark:bg-darkTheme dark:text-white">
+
+  <!-- Background Image -->
+  <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+    <img src="/img/header-bg-color.png" alt="Colorful header background illustration" class="w-full">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between md:justify-center z-50">
+    <div class="md:hidden">
+      <img src="/img/chbappy-cse-favicon.png" alt="Ch Bappy Logo" class="w-6 cursor-pointer dark:hidden">
+      <img src="/img/chbappy-cse-favicon.png" alt="Ch Bappy Logo" class="w-6 cursor-pointer hidden dark:block">
+    </div>
+
+    <ul
+      class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent">
+      <li>
+        <div>
+          <img src="/img/chbappy-cse-favicon.png" alt="Ch Bappy Logo" class="w-6 cursor-pointer dark:hidden">
+          <img src="/img/chbappy-cse-favicon.png" alt="Ch Bappy Logo" class="w-6 cursor-pointer hidden dark:block">
+        </div>
+      </li>
+      <li><a href="#work" class="hover:underline">See All Work</a></li>
+      <li>
+        <button onclick="toggleTheme()">
+          <img src="/img/moon_icon.png" alt="Toggle Dark Mode" class="w-6 dark:hidden">
+          <img src="/img/sun_icon.png" alt="Toggle Light Mode" class="w-6 hidden dark:block">
+        </button>
+      </li>
+    </ul>
+
+    <button onclick="toggleTheme()" class="md:hidden">
+      <img src="/img/moon_icon.png" alt="Toggle Dark Mode" class="w-6 dark:hidden">
+      <img src="/img/sun_icon.png" alt="Toggle Light Mode" class="w-6 hidden dark:block">
+    </button>
+
+    <button class="block md:hidden ml-3" onclick="openMenu()">
+      <img src="/img/menu-black.png" alt="Open Menu" class="w-6 dark:hidden">
+      <img src="/img/menu-white.png" alt="Open Menu" class="w-6 hidden dark:block">
+    </button>
+
+    <!-- Mobile Menu -->
+    <ul id="sideMenu"
+      class="flex md:hidden flex-col py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 gap-4 dark:bg-[#293548] dark:text-white"
+      aria-label="Mobile navigation menu">
+      <div class="absolute right-6 top-6" onclick="closeMenu()">
+        <img src="/img/close-black.png" alt="Close Menu" class="cursor-pointer w-5 dark:hidden">
+        <img src="/img/close-white.png" alt="Close Menu" class="cursor-pointer w-5 hidden dark:block">
+      </div>
+      <li><a href="#work" class="hover:underline">See All Work</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="work" class="w-full px-[12%] py-10 scroll-mt-20 pt-20">
+    <h1 class="text-center mb-2 text-lg font-Ovo pt-10">JavaScript Projects</h1>
+    <h2 class="text-center md:text-5xl text-xl font-Ovo">DOM Manipulation & Interactive Web Apps</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12">
+      Explore a collection of Vanilla JavaScript projects focusing on dynamic DOM manipulation, event handling, and
+      interactive user experiences.
+    </p>
+
+    <!-- Work Items -->
+    <section id="work-container" class="grid grid-cols-auto my-10 gap-5 dark:text-black" aria-label="Project showcase">
+    </section>
+
+    <!-- Show More Button -->
+    <button id="show-more"
+      class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-2 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover">
+      Show more
+      <img src="/img/right-arrow-bold.png" alt="show more" class="w-4 dark:hidden">
+      <img src="/img/right-arrow-bold-dark.png" alt="show more" class="w-4 hidden dark:block">
+    </button>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-20">
+    <div class="text-center sm:flex items-center justify-center border-t border-gray-400 mx-[10%] mt-12 py-6">
+      <p>&copy; <span id="currentYear"></span> <a href="https://github.com/chbappy-cse" class="hover:underline">Ch
+          Bappy</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/app.js" defer></script>
+  <script>
+    const works = [
+      { image: "/img/thumb/weather-app.webp", title: "Weather App", category: "DOM Manipulation", link: "/weather-app.html" },
+      { image: "/img/thumb/todo-list-app.webp", title: "To-Do List App", category: "DOM Manipulation", link: "/todo-list-app.html" },
+      { image: "/img/thumb/quiz-app.webp", title: "Quiz App", category: "DOM Manipulation", link: "/quiz-app.html" },
+      { image: "/img/thumb/generate-random-password.webp", title: "Password App", category: "DOM Manipulation", link: "/generate-random-password.html" },
+      { image: "/img/thumb/notes-app.webp", title: "Notes App", category: "DOM Manipulation", link: "/notes-app.html" },
+    ];
+
+    const workContainer = document.getElementById("work-container");
+    const showMoreBtn = document.getElementById("show-more");
+    let itemsToShow = 4;
+
+    function renderWorks() {
+      workContainer.innerHTML = "";
+      works.slice(0, itemsToShow).forEach(work => {
+        const workCard = `
+        <article class="aspect-square bg-[url('${work.image}')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border" aria-label="${work.title} project">
+          <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+            <div>
+              <h3 class="font-semibold font-Ovo">${work.title}</h3>
+              <p class="text-sm text-gray-700">${work.category}</p>
+            </div>
+            <a href="${work.link}" target="_blank" rel="noopener" class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#333] group-hover:bg-lime-300 transition">
+              <img src="/img/send-icon.png" alt="Open project" class="w-5">
+            </a>
+          </div>
+        </article>`;
+        workContainer.innerHTML += workCard;
+      });
+
+      if (itemsToShow >= works.length) showMoreBtn.style.display = "none";
+    }
+
+    renderWorks();
+
+    showMoreBtn.addEventListener("click", () => {
+      itemsToShow += 4;
+      renderWorks();
+    });
+  </script>
+</body>
+
+</html>
