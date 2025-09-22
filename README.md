@@ -37,6 +37,7 @@ This repository contains a variety of projects that demonstrate DOM manipulation
 - HTML5  
 - CSS3  
 - Vanilla JavaScript (ES6+)  
+- Tailwind CSS  
 - Git & GitHub  
 
 ---
