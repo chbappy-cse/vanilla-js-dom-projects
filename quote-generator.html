@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator App with DOM Manipulation – Vanilla JavaScript Project by Ch Bappy</title>
+    <meta name="title" content="Quote Generator App with DOM Manipulation – Vanilla JavaScript Project by Ch Bappy">
+    <meta name="description"
+        content="Build a dynamic Quote Generator using Vanilla JavaScript by Ch Bappy. This beginner-friendly project teaches you how to fetch data from a third-party API and manipulate the DOM to create a functional and stylish web app.">
+    <meta name="keywords"
+        content="JavaScript Quote Generator, Quote Generator App, Random Quote Generator, JS API Project, Frontend Project, Vanilla JavaScript, DOM Manipulation, API Fetch, Web Development Project">
+    <link rel="icon" type="image/x-icon" href="/img/chbappy-cse-favicon.png">
+    <link rel="stylesheet" href="/css/quote-generator.css">
+</head>
+
+<body>
+
+    <div class="quote-box">
+        <h2>Quote of the day</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <span id="author">Loading...</span>
+        <div>
+            <button onclick="getQuote(api_url)">New Quote</button>
+            <button onclick="tweet()">Tweet</button>
+        </div>
+    </div>
+
+
+    <script src="/js/quote-generator.js"></script>
+</body>
+
+</html>
