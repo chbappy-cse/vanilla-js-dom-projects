@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description and Keywords -->
+    <meta name="description"
+        content="Learn to build an accurate and functional Stopwatch App using Vanilla JavaScript. This project by Ch Bappy is ideal for beginners, teaching you how to manage real-time timers, handle user input, and update the DOM for a seamless user experience.">
+    <meta name="keywords"
+        content="JavaScript Stopwatch, Stopwatch App, JavaScript Project, DOM Manipulation, JS Timer, Frontend Development, Web App, Ch Bappy">
+
+    <title><span id="year"></span></title>
+
+    <link rel="icon" type="image/x-icon" href="/img/chbappy-cse-favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/stopwatch-app.css">
+</head>
+
+<body>
+
+    <div class="stopwatch">
+        <h1 id="displayTime">00:00:00</h1>
+        <div class="buttons">
+            <img onclick="watchStop()" src="/img/stopwatch-app/stop.png" alt="stop">
+            <img onclick="watchStart()" src="/img/stopwatch-app/start.png" alt="start">
+            <img onclick="watchReset()" src="/img/stopwatch-app/reset.png" alt="start">
+        </div>
+    </div>
+
+    <script src="/js/stopwatch-app.js"></script>
+</body>
+
+</html>
