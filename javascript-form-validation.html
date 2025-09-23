@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="JavaScript Form Validation – A DOM Project by Ch Bappy">
+    <meta name="description"
+        content="Learn to build a robust Form Validation system using Vanilla JavaScript. This project by Ch Bappy is perfect for beginners, teaching you how to handle user input, display error messages, and ensure data integrity without relying on a framework.">
+    <meta name="keywords"
+        content="JavaScript Form Validation, Form Validation Project, JS DOM, Frontend Development, Ch Bappy">
+    <title>JavaScript Form Validation – A DOM Project by Ch Bappy</title>
+    <link rel="icon" type="image/x-icon" href="/img/chbappy-cse-favicon.png">
+    <link rel="stylesheet" href="/css/javascript-form-validation.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="fa-paper-plane">
+                <img src="/img/send.png" alt="">
+            </div>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()" />
+                <span id="name-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Phone No.</label>
+                <input type="tel" placeholder="123 456 7890" id="contact-phone" onkeyup="validatePhone()">
+                <span id="phone-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Email Id</label>
+                <input type="email" placeholder="Enter Email" id="contact-email" onkeyup="validateEmail()">
+                <span id="email-error"></span>
+            </div>
+
+            <div class="input-group">
+                <label>Your Message</label>
+                <textarea rows="5" placeholder="Enter your message" id="contact-message"
+                    onkeyup="validateMessage()"></textarea>
+                <span id="message-error"></span>
+            </div>
+
+            <button onclick="return validateForm()">Submit</button>
+            <span id="submit-error"></span>
+
+        </form>
+    </div>
+
+
+    <script src="/js/javascript-form-validation.js"></script>
+</body>
+
+</html>
