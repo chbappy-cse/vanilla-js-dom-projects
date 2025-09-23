@@ -110,7 +110,7 @@
     <!-- Show More Button -->
     <button id="show-more"
       class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-2 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover">
-      Show more
+      Show More <span></span>
       <img src="/img/right-arrow-bold.png" alt="show more" class="w-4 dark:hidden">
       <img src="/img/right-arrow-bold-dark.png" alt="show more" class="w-4 hidden dark:block">
     </button>
@@ -126,6 +126,7 @@
 
   <!-- Scripts -->
   <script src="/js/app.js" defer></script>
+
   <script>
     const works = [
       { image: "/img/thumb/weather-app.webp", title: "Weather App", category: "DOM", link: "/weather-app.html" },
@@ -145,36 +146,47 @@
 
     const workContainer = document.getElementById("work-container");
     const showMoreBtn = document.getElementById("show-more");
-    let itemsToShow = 8;
+    let itemsToShow = 20;
 
     function renderWorks() {
       workContainer.innerHTML = "";
       works.slice(0, itemsToShow).forEach(work => {
         const workCard = `
-        <article class="aspect-square bg-[url('${work.image}')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border" aria-label="${work.title} project">
-          <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border">
-            <div>
-              <h3 class="font-semibold font-Ovo leading-[normal]">${work.title}</h3>
-              <p class="text-sm text-gray-700">${work.category}</p>
-            </div>
-            <a href="${work.link}" target="_blank" rel="noopener" class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#333] group-hover:bg-lime-300 transition">
-              <img src="/img/send-icon.png" alt="Open project" class="w-5">
-            </a>
+      <article class="aspect-square bg-[url('${work.image}')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group border" aria-label="${work.title} project">
+        <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border">
+          <div>
+            <h3 class="font-semibold font-Ovo leading-[normal]">${work.title}</h3>
+            <p class="text-sm text-gray-700">${work.category}</p>
           </div>
-        </article>`;
+          <a href="${work.link}" target="_blank" rel="noopener" class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#333] group-hover:bg-lime-300 transition">
+            <img src="/img/send-icon.png" alt="Open project" class="w-5">
+          </a>
+        </div>
+      </article>`;
         workContainer.innerHTML += workCard;
       });
 
-      if (itemsToShow >= works.length) showMoreBtn.style.display = "none";
+      updateShowMoreText();
+    }
+
+    function updateShowMoreText() {
+      const remaining = works.length - itemsToShow;
+      if (remaining > 0) {
+        showMoreBtn.style.display = "flex";
+        showMoreBtn.querySelector("span").textContent = `(${remaining}+)`;
+      } else {
+        showMoreBtn.style.display = "none";
+      }
     }
 
     renderWorks();
 
     showMoreBtn.addEventListener("click", () => {
-      itemsToShow += 8;
+      itemsToShow += 20;
       renderWorks();
     });
   </script>
+
 </body>
 
 </html>
